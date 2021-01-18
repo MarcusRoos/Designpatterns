@@ -10,6 +10,7 @@
 #include "SoundProducer.h"
 #include <iostream>
 
+// Shouter class, extends SoundProducer, overrides makeSound
 class Shouter : public SoundProducer {
 public:
     Shouter();

@@ -7,6 +7,7 @@
 #ifndef DT063G_TALKER_H
 #define DT063G_TALKER_H
 
+// Talker class, binds the calls together
 class Talker {
 public:
     Talker() = default;

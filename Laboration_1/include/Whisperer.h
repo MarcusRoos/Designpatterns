@@ -9,6 +9,7 @@
 #include "SoundProducer.h"
 #include <iostream>
 
+// Whisper class, extends SoundProducer, overrides makeSound
 class Whisperer : public SoundProducer {
 public:
     Whisperer();
