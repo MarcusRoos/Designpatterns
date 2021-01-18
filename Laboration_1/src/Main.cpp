@@ -11,8 +11,10 @@
 int main() {
     Uppgift1 uppgift1;
 
+    // Whisper
     uppgift1.setSoundProducer(new Whisperer);
     uppgift1.saySomething();
+    // Shout
     uppgift1.setSoundProducer(new Shouter);
     uppgift1.saySomething();
 
