@@ -18,7 +18,7 @@ public:
     Uppgift1() = default;
     ~Uppgift1() override = default;
     void setSoundProducer(SoundProducer *as);
-    void saySomething() const override();
+    void saySomething() const override;
 };
 
 #endif //DT063G_UPPGIFT1_H

@@ -7,7 +7,7 @@
 #include "Whisperer.h"
 #include "SoundProducer.h"
 
-Whisperer::Whisperer(): SoundProducer("Whisperer") {};
+Whisperer::Whisperer(): SoundProducer("Whisperer: ") {};
 
 void Whisperer::makeSound() const {
     std::cout << getSoundName() << "Ssch,hush,hush" << std::endl;
