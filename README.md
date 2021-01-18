@@ -23,36 +23,34 @@
 --------------
 
 ## About This Repository
-This is your personal student repository which will be used to submit solutions for the course's various assignments. 
+This is your personal student repository which will be used to submit solutions for the course's various assignments.
 This repo is completely private, meaning none other than you and the teachers have access to it.
-As you've completed a particular assignment and wish to have its solution evaluated, you'll need to perform a formal 
-hand-in using the dedicated submission box in Moodle. Nothing should be attached to this submission in Moodle, as the 
-current project state will be fetched from this repository, so make sure to synchronize any local changes with **remote origin** 
+As you've completed a particular assignment and wish to have its solution evaluated, you'll need to perform a formal
+hand-in using the dedicated submission box in Moodle. Nothing should be attached to this submission in Moodle, as the
+current project state will be fetched from this repository, so make sure to synchronize any local changes with **remote origin**
 before submission.
 
 -------------
 
 ## General Structure
-The file / folder structure of this repo is determined by its initial state and you may not diverge from this structure at any time: 
+The file / folder structure of this repo is determined by its initial state and you may not diverge from this structure at any time:
 
 ````
 root/
-    _Resources/
-    Laboration_1/
-    Laboration_2/
-    Laboration_3/
-    Laboration_4/
-    Laboration_5/
-    Project/
-    .gitignore
-    CMakeLists.txt
-    README.md
+  _CodeBase/
+  _playground/
+  _Resources/
+  Laboration_x/
+  .gitignore
+  CMakeLists.txt
+  README.md
 ````
 
-- **``_Resources/``** constitute as a common place to write and read data stored in files, and is shared by all assignments. 
+- **``_CodeBase/``** contains some inherent code needed for various assignments. Details for when and where this is needed will be explained in respective assignment description!
+- **``_Playground/``** used to play around with code and implementations. Nothing you add to this folder will be included in version control, unless explicitly stated in **``_Playground/.gitignore``**!
+- **``_Resources/``** constitute as a common place to write and read data stored in files, and is shared by all assignments.
 Further details can be seen in dedicated [**``README.md``**](./_Resources/README.md).
-- **``.gitignore``** dictates which content should be excluded from version control, i.e. not included in commits. 
-Existing contents of this file should be general enough to cover most circumstances, but feel free to add more as the need arises.
+- **``.gitignore``** dictates which content should be excluded from version control, i.e. not included in commits. Existing contents of this file should be general enough to cover most circumstances, but feel free to add more as the need arises.
 
 Each assignment subdirectory has an identical file / folder structure:
 
@@ -69,14 +67,14 @@ Laboration_x/
 -------------
 
 #### Build Scripts
-You should all already be somewhat familiar with **CMake** and as in previous course(s) we'll continue to rely on its 
-cross-platform management of project builds, and just like before you'll be provided with a working structure of existing 
-build scripts. Directly under the repo root you'll find the master **``CMakeLists.txt``** which defines some general rulesets 
+You should all already be somewhat familiar with **CMake** and as in previous course(s) we'll continue to rely on its
+cross-platform management of project builds, and just like before you'll be provided with a working structure of existing
+build scripts. Directly under the repo root you'll find the master **``CMakeLists.txt``** which defines some general rulesets
 and delegates build details to various subscripts.
 
 - Minimum required **CMake** is set to **3.2** and this value should only be modified if such a change can properly be justified.
 - We're only using **C++** in conformity to standard **C++11**. The value **``CMAKE_CXX_STANDARD 11``** may therefore not be changed.
-- Static inclusion of dependencies may be omitted from the build in case of any issues, which could happen on certain Unix systems. 
+- Static inclusion of dependencies may be omitted from the build in case of any issues, which could happen on certain Unix systems.
 Simply remove or comment out the following line **``set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -static")``**.
 
 The remaining parts of the master script simply delegates build details to dedicated subscripts, which can be found in relevant subdirectories:
@@ -84,17 +82,17 @@ The remaining parts of the master script simply delegates build details to dedic
 ````
 add_subdirectory(Laboration_x)
 add_subdirectory(Project)
-```` 
+````
 
-This makes the build system very modularized and provides easy management of what needs to be included in each build. During this course 
-build time shouldn't raise much of an issue, but delegation in this manner offers scalability where certain parts can easily be 
+This makes the build system very modularized and provides easy management of what needs to be included in each build. During this course
+build time shouldn't raise much of an issue, but delegation in this manner offers scalability where certain parts can easily be
 omitted from the build by simply commenting out relevant inclusion.
 
 -------------
 
 ## About the Author
 
-Please write a short presentation. Suitable content would be... 
+Please write a short presentation. Suitable content would be...
 
 - ... who you are.
 - ... previous programming experiences.
@@ -104,5 +102,3 @@ Feel free to use Markdown syntax [^markdown] [^bitbucket_md]
 
 [^markdown]: _Markdown Cheatsheet_ [link](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 [^bitbucket_md]: _Bitbucket Supported Markdown_ [link](https://bitbucket.org/tutorials/markdowndemo/src/master/)
-
-
