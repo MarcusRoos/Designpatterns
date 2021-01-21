@@ -16,8 +16,7 @@ class Bakery {
 private:
     BakingRecepyManager bakingRecepyManager;
 public:
-    explicit Bakery(const std::string& pantryPath) :
-    bakingRecepyManager(pantryPath) {}
+    explicit Bakery(const std::string& pantryPath);
     void addRecepy(BakingRecepy *recipe) {bakingRecepyManager.addNewRecipe(recipe);}
     void runBakery();
 };
