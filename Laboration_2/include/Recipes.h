@@ -12,11 +12,11 @@
 #include <vector>
 #include "BakingRecepy.h"
 
-class Recipes : public BakingRecepy
+class Pizza : public BakingRecepy
 {
 
 public:
-    Recipes()
+    Pizza()
     {
         neededIng.emplace_back("oil");
         neededIng.emplace_back("yeast");
@@ -24,7 +24,7 @@ public:
         neededIng.emplace_back("salt");
     }
 
-    ~Recipes() override = default;
+    ~Pizza() override = default;
     void bakeIt() override {
         std::cout << "Baking Recipes: ";
         for (const auto& ingExists : neededIng){
