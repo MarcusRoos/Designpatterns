@@ -14,7 +14,7 @@ int main()
     Bakery bakery(fileName);
 
     // Adds the 4 recommended recipes
-    bakery.addRecepy(new Recipes);
+    bakery.addRecepy(new Pizza);
     bakery.addRecepy(new Scones);
     bakery.addRecepy(new Kladdkaka);
     bakery.addRecepy(new Sockerkaka);

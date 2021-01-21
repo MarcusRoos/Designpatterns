@@ -26,11 +26,13 @@ public:
 
     ~Pizza() override = default;
     void bakeIt() override {
-        std::cout << "Baking Recipes: ";
+        std::cout << "Baking Pizza: ";
         for (const auto& ingExists : neededIng){
             std::cout << ingExists.getName() << ", ";
         }
-        std::cout << std::endl;
+        std::cout << std::endl << "Mash ingredients together, put topping on "
+                                  "dough, keep in oven at "
+                                  "225C for 10min." << std::endl << std::endl;
     }
 
 };
@@ -53,7 +55,9 @@ public:
         for (const auto& ingExists : neededIng){
             std::cout << ingExists.getName() << ", ";
         }
-        std::cout << std::endl;
+        std::cout << std::endl << "Mash ingredients together, put dough in "
+                                  "oven at 225C for 10min."
+                << std::endl << std::endl;
     }
 };
 class Sockerkaka : public BakingRecepy
@@ -75,7 +79,9 @@ public:
         for (const auto& ingExists : neededIng){
             std::cout << ingExists.getName() << ", ";
         }
-        std::cout << std::endl;
+        std::cout << std::endl << "Mash ingredients together, put in oven "
+                                  "at 225C for 15min. " << std::endl
+                                  << std::endl;
     }
 };
 
@@ -98,7 +104,9 @@ public:
         for (const auto& ingExists : neededIng){
             std::cout << ingExists.getName() << ", ";
         }
-        std::cout << std::endl;
+        std::cout << std::endl << "Mash ingredients together, "
+                                  "keep in oven at 200C for 10min."
+                << std::endl << std::endl;
     }
 };
 

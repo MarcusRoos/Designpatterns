@@ -44,7 +44,7 @@ BakingRecepy* BakingRecepyManager::getNextBakingRecipe() {
         return recipe;
     }
     else {
-        throw noBakingException;
+        throw noBakingException; // NOLINT(misc-throw-by-value-catch-by-reference)
     }
 
 }
