@@ -4,10 +4,7 @@
 
 //#include "memstat.hpp"
 #include "Bakery.h"
-#include "Pizza.h"
-#include "Scones.h"
-#include "Kladdkaka.h"
-#include "Sockerkaka.h"
+#include "Recipes.h"
 #include "Management.h"
 
 int main()
@@ -17,7 +14,7 @@ int main()
     Bakery bakery(fileName);
 
     // Adds the 4 recommended recipes
-    bakery.addRecepy(new Pizza);
+    bakery.addRecepy(new Recipes);
     bakery.addRecepy(new Scones);
     bakery.addRecepy(new Kladdkaka);
     bakery.addRecepy(new Sockerkaka);
