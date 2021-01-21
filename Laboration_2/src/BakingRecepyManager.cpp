@@ -9,6 +9,9 @@
 #include "BakingRecepyManager.h"
 #include "NoBakingException.h"
 
+// Constructor, gets name of file passed down as parameter, uses
+// filename to locate file and read, will read until end of file and
+// push back every value into availableIngredients vector.
 BakingRecepyManager::BakingRecepyManager(const std::string& fileName) {
     std::string ingredient;
     std::ifstream inFile("../../_Resources/" + fileName);
@@ -30,12 +33,17 @@ BakingRecepyManager::BakingRecepyManager(const std::string& fileName) {
 
 }
 
+// Deconstructor to ensure no memory leaks
 BakingRecepyManager::~BakingRecepyManager() {
     for(auto recipe : bakingRecipes) {
         delete recipe;
     }
 }
 
+// Gets next baking recipe, will search through the bakingRecipes vector
+// to find any more baking recipes, if found it deletes that entry in the
+// vector and returns the found recipe. Looks until hasAnotherRecepy returns
+// false, in which case there are no more recipes.
 BakingRecepy* BakingRecepyManager::getNextBakingRecipe() {
     NoBakingException noBakingException;
     if(hasAnotherRecepy()) {
@@ -49,6 +57,7 @@ BakingRecepy* BakingRecepyManager::getNextBakingRecipe() {
 
 }
 
+// Returns whether bakingRecipes vector is empty or not
 bool BakingRecepyManager::hasAnotherRecepy() {
     return !bakingRecipes.empty();
 }

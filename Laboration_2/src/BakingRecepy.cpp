@@ -5,6 +5,10 @@
 //
 #include "BakingRecepy.h"
 
+// Checks whether the recipe is able to be produced or not, if all the
+// required ingredients exists, its bakeable, otherwise its not.
+// If it fails to find just one ingredient it will return false and
+// the recipe cannot be made
 bool BakingRecepy::isBakeable(std::vector<Ingredient> const &availableIng) {
     for (const auto& ingExists : neededIng)
     {
