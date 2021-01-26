@@ -6,13 +6,15 @@
 
 #include "Car.h"
 
-// Adds the different power sources to the vehicle
+// Constructor, assigns vehicle type and
+// adds the different power sources to the vehicle as well as a default source
 Car::Car() : Vehicle("Car", std::unique_ptr<PowerSource>(new V8ClassicAD())) {
     powerSource.emplace_back(new V8ClassicAD());
     powerSource.emplace_back(new GasTurbineAD());
     powerSource.emplace_back(new FuelCellAD());
 }
 
+// Takes the vehicle for a test drive, tries to change engine mid-drive
 void Car::drive() {
     incPower(40);
     tryStart();
@@ -34,9 +36,13 @@ void Car::drive() {
     decPower(45);
     stop();
 }
+
+// Steers the vehicle left by *param* degrees by printing as a string
 void Car::steerLeft(int degrees) {
     std::cout << "Steering left at " + std::to_string(degrees) + " degrees" << std::endl;
 }
+
+// Steers the vehicle right by *param* degrees by printing as a string
 void Car::steerRight(int degrees) {
     std::cout << "Steering right at " + std::to_string(degrees) + " degrees" << std::endl;
 }
