@@ -7,9 +7,9 @@
 #include "Submarine.h"
 
 Submarine::Submarine() : Vehicle("Submarine", std::unique_ptr<PowerSource>(new FuelCellAD())){
-    engines.emplace_back(new V8ClassicAD());
-    engines.emplace_back(new GasTurbineAD());
-    engines.emplace_back(new FuelCellAD());
+    powerSource.emplace_back(new V8ClassicAD());
+    powerSource.emplace_back(new GasTurbineAD());
+    powerSource.emplace_back(new FuelCellAD());
 }
 
 void Submarine::drive(){
@@ -20,7 +20,7 @@ void Submarine::drive(){
     steerRight(355);
     decPower(20);
     std::string tmpEngine = poweredBy();
-    setPowerSource(move(engines[2]));
+    setPowerSource(move(powerSource[2]));
     std::cout
             << "Changing from  " << tmpEngine << " to " << poweredBy() << std::endl;
     incPower(50);

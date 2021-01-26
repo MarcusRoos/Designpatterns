@@ -17,7 +17,7 @@
 class Submarine : public Vehicle
 {
 private:
-    std::vector<std::unique_ptr<PowerSource>> engines;
+    std::vector<std::unique_ptr<PowerSource>> powerSource;
 public:
     Submarine();
     ~Submarine() = default;

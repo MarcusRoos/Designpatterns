@@ -16,7 +16,7 @@
 class SpaceShuttle : public Vehicle
 {
 private:
-    std::vector<std::unique_ptr<PowerSource>> engines;
+    std::vector<std::unique_ptr<PowerSource>> powerSource;
 public:
     SpaceShuttle();
     ~SpaceShuttle() = default;

@@ -7,9 +7,9 @@
 #include "SpaceShuttle.h"
 
 SpaceShuttle::SpaceShuttle() : Vehicle("Space Shuttle", std::unique_ptr<PowerSource>(new FuelCellAD())) {
-    engines.emplace_back(new V8ClassicAD());
-    engines.emplace_back(new GasTurbineAD());
-    engines.emplace_back(new FuelCellAD());
+    powerSource.emplace_back(new V8ClassicAD());
+    powerSource.emplace_back(new GasTurbineAD());
+    powerSource.emplace_back(new FuelCellAD());
 }
 
 void SpaceShuttle::drive() {
@@ -20,7 +20,7 @@ void SpaceShuttle::drive() {
     steerRight(312);
     decPower(30);
     std::string tmpEngine = poweredBy();
-    setPowerSource(move(engines[0]));
+    setPowerSource(move(powerSource[0]));
     std::cout
             << "Changing from  " << tmpEngine << " to " << poweredBy() << std::endl;
     incPower(60);

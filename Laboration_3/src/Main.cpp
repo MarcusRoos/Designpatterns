@@ -19,9 +19,10 @@ int main()
 {
     bool again = true;
     do {
+        // Adds power sources and vehicles to their respect vector of pointers
         std::vector<std::unique_ptr<PowerSource>> powerSource;
         std::vector<std::unique_ptr<Vehicle>> vehicleType;
-
+        // Fill up the vectors
         powerSource.emplace_back(new V8ClassicAD());
         powerSource.emplace_back(new GasTurbineAD());
         powerSource.emplace_back(new FuelCellAD());
@@ -43,6 +44,7 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cin >> idx;
         }
+        // Sets vehicle in accordance to user choice
         std::unique_ptr<Vehicle> chosenVehicle(move(vehicleType[idx - 1]));
 
         // Sets power source
@@ -59,16 +61,19 @@ int main()
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cin >> idx;
         }
+        // Sets the power source in accordance to user choice
         chosenVehicle->setPowerSource(move(powerSource[idx-1]));
 
 
-
+        // Prints what vehicle and which power source the vehicle is using
         std::cout << "Vehicle: " + chosenVehicle->toString() << std::endl <<
-        "Engine: " << chosenVehicle->poweredBy() << std::endl
+        "Power Source: " << chosenVehicle->poweredBy() << std::endl
                   << std::endl;
 
+        // Drives the vehicles
         chosenVehicle->drive();
 
+        // Asks if the user wants to continue the program or quit
         std::cout << "Rego?" << std::endl;
         std::cout << "1. Yes. " << std::endl;
         std::cout << "0. Nah. " << std::endl;
