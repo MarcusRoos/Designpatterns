@@ -15,6 +15,7 @@ int main()
 
     //  Runs the bakery
     bakery.runBakery();
+    // Pauses the program to gauge whats happening
     pauseFunction();
     return 0;
 }
