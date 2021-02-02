@@ -10,8 +10,8 @@
 
 int main() {
     Uppgift1 uppgift1;
-    Whisperer *whisper = new Whisperer();
-    Shouter *shout = new Shouter();
+    auto *whisper = new Whisperer();
+    auto *shout = new Shouter();
 
     // Whisper
     uppgift1.setSoundProducer(whisper);
@@ -19,6 +19,9 @@ int main() {
     // Shout
     uppgift1.setSoundProducer(shout);
     uppgift1.saySomething();
+    
+    delete whisper;
+    delete shout;
 
     pauseFunction();
     return 0;
