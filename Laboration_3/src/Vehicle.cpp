@@ -8,9 +8,9 @@
 #include <utility>
 
 // Constructor, accepts string and unique pointer as parameters
-Vehicle::Vehicle(string avehicleType, std::unique_ptr<PowerSource> aPowerSource) {
+Vehicle::Vehicle(string avehicleType, std::unique_ptr <PowerSource> aPowerSource) {
     vehicleType = std::move(avehicleType);
-    powerSource = std::move(aPowerSource);
+    powerSource = std::move(powerSource);
 }
 
 // Wanted steerLeft and steerRight to be pure virtual but to conform with requirements
@@ -41,6 +41,7 @@ bool Vehicle::tryStart() {
 // Stops the vehicle
 bool Vehicle::stop() {
     powerSource->stop();
+    powerSource.reset();
     return true;
 }
 
@@ -54,7 +55,11 @@ std::string Vehicle::toString() {
     return vehicleType;
 }
 
-// Sets the power source of the vehicle
-void Vehicle::setPowerSource(std::unique_ptr<PowerSource> ptr) {
-        powerSource = std::move(ptr);
+void Vehicle::setPowerSource(std::unique_ptr<PowerSource> aPowerSource) {
+    powerSource = std::move(aPowerSource);
 }
+
+
+
+// Sets the power source of the vehicle
+

@@ -16,15 +16,13 @@
 
 class Car : public Vehicle
 {
-private:
-    std::vector<std::unique_ptr<PowerSource>> powerSource;
+
 public:
     Car();
-    ~Car() = default;
+    ~Car();
     void drive() override;
     static void steerLeft(int degrees);
     static void steerRight(int degrees);
-
 };
 
 

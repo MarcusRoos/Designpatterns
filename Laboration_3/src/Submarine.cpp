@@ -8,31 +8,28 @@
 
 // Constructor, assigns vehicle type and
 // adds the different power sources to the vehicle as well as a default source
-Submarine::Submarine() : Vehicle("Submarine", std::unique_ptr<PowerSource>(new FuelCellAD())){
-    powerSource.emplace_back(new V8ClassicAD());
-    powerSource.emplace_back(new GasTurbineAD());
-    powerSource.emplace_back(new FuelCellAD());
+Submarine::Submarine() : Vehicle("Submarine", std::unique_ptr<PowerSource>(new GasTurbineAD())){
+
 }
 
 // Takes the vehicle for a test drive, tries to change engine mid-drive
 void Submarine::drive(){
     incPower(40);
     tryStart();
-    incPower(50);
-    steerLeft(350);
-    steerRight(355);
-    decPower(20);
-    std::string tmpEngine = poweredBy();
-    setPowerSource(move(powerSource[2]));
-    std::cout
-            << "Changing from  " << tmpEngine << " to " << poweredBy() << std::endl;
-    incPower(50);
-    steerLeft(280);
-    steerRight(290);
-    steerLeft(70);
-    steerLeft(120);
-    steerRight(200);
-    decPower(20);
+    incPower(75);
+    steerRight(50);
+    steerLeft(90);
+    decPower(45);
+    setPowerSource( std::unique_ptr<FuelCellAD>(new FuelCellAD()));
+    std::cout << "Changing power source to " << poweredBy() << std::endl;
+    incPower(75);
+    steerRight(45);
+    steerLeft(65);
+    steerRight(70);
+    steerLeft(95);
+    steerLeft(80);
+    steerRight(120);
+    decPower(45);
     stop();
 }
 

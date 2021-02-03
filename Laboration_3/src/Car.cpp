@@ -9,9 +9,7 @@
 // Constructor, assigns vehicle type and
 // adds the different power sources to the vehicle as well as a default source
 Car::Car() : Vehicle("Car", std::unique_ptr<PowerSource>(new V8ClassicAD())) {
-    powerSource.emplace_back(new V8ClassicAD());
-    powerSource.emplace_back(new GasTurbineAD());
-    powerSource.emplace_back(new FuelCellAD());
+
 }
 
 // Takes the vehicle for a test drive, tries to change engine mid-drive
@@ -22,10 +20,8 @@ void Car::drive() {
     steerRight(50);
     steerLeft(90);
     decPower(45);
-    std::string tmpEngine = poweredBy();
-    setPowerSource(move(powerSource[1]));
-    std::cout
-            << "Changing from  " << tmpEngine << " to " << poweredBy() << std::endl;
+    setPowerSource( std::unique_ptr<GasTurbineAD>(new GasTurbineAD()));
+    std::cout << "Changing power source to " << poweredBy() << std::endl;
     incPower(75);
     steerRight(45);
     steerLeft(65);

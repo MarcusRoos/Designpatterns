@@ -16,11 +16,10 @@
 
 class Submarine : public Vehicle
 {
-private:
-    std::vector<std::unique_ptr<PowerSource>> powerSource;
+
 public:
     Submarine();
-    ~Submarine() = default;
+    ~Submarine();
     void drive() override;
     static void steerLeft(int degrees);
     static void steerRight(int degrees);

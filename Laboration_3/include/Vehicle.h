@@ -23,22 +23,18 @@ private:
 protected:
     Vehicle() = default;
     Vehicle(string avehicleType, std::unique_ptr<PowerSource> aPowerSource);
-
     bool tryStart();
     bool stop();
     bool incPower(int p = 5);
     bool decPower(int p = 5);
-
     static void steerLeft(int degrees);
     static void steerRight(int degrees);
 public:
     ~Vehicle() = default;
-
     std::string toString();
     std::string poweredBy();
-
     virtual void drive() = 0;
-    void setPowerSource(std::unique_ptr<PowerSource> ptr);
+    void setPowerSource(std::unique_ptr<PowerSource> powersource);
 };
 
 #endif //DT063G_VEHICLE_H

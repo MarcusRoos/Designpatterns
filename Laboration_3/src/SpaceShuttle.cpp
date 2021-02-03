@@ -9,31 +9,27 @@
 // Constructor, assigns vehicle type and
 // adds the different power sources to the vehicle as well as a default source
 SpaceShuttle::SpaceShuttle() : Vehicle("Space Shuttle", std::unique_ptr<PowerSource>(new FuelCellAD())) {
-    powerSource.emplace_back(new V8ClassicAD());
-    powerSource.emplace_back(new GasTurbineAD());
-    powerSource.emplace_back(new FuelCellAD());
+
 }
 
 // Takes the vehicle for a test drive, tries to change engine mid-drive
 void SpaceShuttle::drive() {
     incPower(40);
     tryStart();
-    incPower(60);
-    steerLeft(95);
-    steerRight(312);
-    decPower(30);
-    std::string tmpEngine = poweredBy();
-    setPowerSource(move(powerSource[0]));
-    std::cout
-            << "Changing from  " << tmpEngine << " to " << poweredBy() << std::endl;
-    incPower(60);
-    steerLeft(56);
-    steerRight(40);
-    steerLeft(80);
+    incPower(75);
+    steerRight(50);
+    steerLeft(90);
+    decPower(45);
+    setPowerSource( std::unique_ptr<V8ClassicAD>(new V8ClassicAD()));
+    std::cout << "Changing power source to " << poweredBy() << std::endl;
+    incPower(75);
+    steerRight(45);
+    steerLeft(65);
     steerRight(70);
-    steerRight(320);
-    steerLeft(45);
-    decPower(30);
+    steerLeft(95);
+    steerLeft(80);
+    steerRight(120);
+    decPower(45);
     stop();
 }
 

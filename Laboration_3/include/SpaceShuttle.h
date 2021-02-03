@@ -15,11 +15,10 @@
 
 class SpaceShuttle : public Vehicle
 {
-private:
-    std::vector<std::unique_ptr<PowerSource>> powerSource;
+
 public:
     SpaceShuttle();
-    ~SpaceShuttle() = default;
+    ~SpaceShuttle();
     void drive() override;
     static void steerLeft(int degrees);
     static void steerRight(int degrees);

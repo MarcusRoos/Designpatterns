@@ -2,7 +2,7 @@
 // Lab3.cpp DT063G Design Patterns With C++
 //------------------------------------------------------------------------------
 
-//#include "memstat.hpp"
+#include "memstat.hpp"
 #include <string>
 #include <vector>
 #include <memory>
@@ -17,8 +17,10 @@
 
 int main()
 {
+
     bool again = true;
     do {
+
         // Adds power sources and vehicles to their respect vector of pointers
         std::vector<std::unique_ptr<PowerSource>> powerSource;
         std::vector<std::unique_ptr<Vehicle>> vehicleType;
@@ -36,16 +38,16 @@ int main()
         std::cout << "2. Submarine" << std::endl;
         std::cout << "3. SpaceShuttle" << std::endl;
         std::cout << "Enter choice" << std::endl;
-        int idx = 0;
-        std::cin >> idx;
-        while (std::cin.fail() || idx < 1 || idx > 3) {
+        int vehicleIdx = 0;
+        std::cin >> vehicleIdx;
+        while (std::cin.fail() || vehicleIdx < 1 || vehicleIdx > 3) {
             std::cout << "Wrong input.\n";
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cin >> idx;
+            std::cin >> vehicleIdx;
         }
         // Sets vehicle in accordance to user choice
-        std::unique_ptr<Vehicle> chosenVehicle(move(vehicleType[idx - 1]));
+        std::unique_ptr<Vehicle> chosenVehicle(move(vehicleType[vehicleIdx - 1]));
 
         // Sets power source
         std::cout << "===== Choose your engine test =====" << std::endl;
@@ -53,21 +55,18 @@ int main()
         std::cout << "2. Gas turbine" << std::endl;
         std::cout << "3. Fuel cell" << std::endl;
         std::cout << "Enter choice" << std::endl;
-        idx = 0;
-        std::cin >> idx;
-        while (std::cin.fail() || idx < 1 || idx > 3) {
+        int sourceIdx = 0;
+        std::cin >> sourceIdx;
+        while (std::cin.fail() || sourceIdx < 1 || sourceIdx > 3) {
             std::cout << "Wrong input.\n";
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cin >> idx;
+            std::cin >> sourceIdx;
         }
         // Sets the power source in accordance to user choice
-        chosenVehicle->setPowerSource(move(powerSource[idx-1]));
-
-
-        // Prints what vehicle and which power source the vehicle is using
+        chosenVehicle->setPowerSource(move(powerSource[sourceIdx-1]));
         std::cout << "Vehicle: " + chosenVehicle->toString() << std::endl <<
-        "Power Source: " << chosenVehicle->poweredBy() << std::endl
+                  "Power Source: " << chosenVehicle->poweredBy() << std::endl
                   << std::endl;
 
         // Drives the vehicles
@@ -93,7 +92,8 @@ int main()
                 again = false;
                 break;
         }
-    }while(again);
 
+
+    }while(again);
     return 0;
 }
