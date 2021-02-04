@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <string>
+#include <memory>
 
 using std::vector;
 using std::string;
@@ -23,8 +24,8 @@ class GameFactory {
 
  public:
     virtual ~GameFactory() = default;
-    virtual vector <Action*> performAction() = 0;
-    virtual vector <Obstacle*> performObstacle() = 0;
+    virtual vector <std::unique_ptr<Action>> performAction() = 0;
+    virtual vector <std::unique_ptr<Obstacle>> performObstacle() = 0;
 };
 
 
