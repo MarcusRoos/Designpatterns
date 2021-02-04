@@ -23,7 +23,8 @@ class GameFactory {
 
  public:
     virtual ~GameFactory() = default;
-    // Suitable operations: see class Game
+    virtual vector <Action*> performAction() = 0;
+    virtual vector <Obstacle*> performObstacle() = 0;
 };
 
 

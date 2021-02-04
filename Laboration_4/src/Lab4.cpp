@@ -44,6 +44,6 @@ void gameLoop() {
 
 int main() {
     std::cout << getAssignmentInfo() << std::endl;
-    // gameLoop();
+    gameLoop();
     return 0;
 }
