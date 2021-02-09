@@ -79,5 +79,7 @@ void Game::play() {
 
 template<typename T>
 void destroyVectorElements(vector<T> &vec) {
-    // TODO(student): implementation
+    for (int i=0; i<vec.size(); i++){
+        delete vec[i];
+    }
 }
