@@ -10,8 +10,7 @@
 int main()
 {
     //Initializes bakery, sends filename to pantry as parameter
-    const std::string fileName = "pantry.dat";
-    Bakery bakery(fileName);
+    Bakery bakery;
 
     //  Runs the bakery
     bakery.runBakery();

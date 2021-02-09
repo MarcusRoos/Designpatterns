@@ -19,11 +19,12 @@ class BakingRecepyManager {
 private:
     std::vector<BakingRecepy*> bakingRecipes;
     std::vector<Ingredient> availableIngredients;
+protected:
+    bool hasAnotherRecepy();
 public:
     BakingRecepyManager() = default;
     ~BakingRecepyManager();
     explicit BakingRecepyManager(const std::string& fileName);
-    bool hasAnotherRecepy();
     void addNewRecipe(BakingRecepy *recipe) {bakingRecipes.push_back(recipe);}
     std::vector<Ingredient> getIngredient() {return availableIngredients;}
     BakingRecepy* getNextBakingRecipe();
