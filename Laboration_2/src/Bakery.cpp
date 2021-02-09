@@ -14,8 +14,9 @@
  keeps going until there are no more recipes, in which case our custom
  exception "NoBakingException" is thrown and caught. */
 
-Bakery::Bakery(const std::string& pantryPath) :
-        bakingRecepyManager(pantryPath) {
+Bakery::Bakery(){
+    const std::string fileName = "pantry.dat";
+    bakingRecepyManager = BakingRecepyManager(fileName);
     // Adds the 4 recommended recipes
     addRecepy(new Pizza);
     addRecepy(new Scones);
