@@ -5,9 +5,7 @@
 #include "Lab4.h"
 #include "Game.h"
 #include <iostream>
-#include <vector>
-#include <cstdlib>
-//#include "memstat.hpp"
+#include "memstat.hpp"
 
 using std::cin;
 
