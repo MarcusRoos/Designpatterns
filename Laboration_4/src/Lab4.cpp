@@ -25,6 +25,7 @@ void gameLoop() {
                 cin.ignore(cin.rdbuf()->in_avail());
             }
 
+            // Creates either nice, or nasty game factory object
             switch (choice) {
                 case 1: gf = new NiceGameFactory();
                 break;

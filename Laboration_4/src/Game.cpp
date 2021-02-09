@@ -11,26 +11,17 @@ using std::cin;
 template<typename T>
 void destroyVectorElements(vector<T> &vec);
 
-
+/**
+ * A new game factory object is passed down as a raw pointer to this function,
+ * this object is used to load the actions, obstacles, player and title
+ * values. The parameter passed down to this function will either be a
+ * nice or nasty game.**/
 Game::Game(GameFactory *gFact) {
     actions = gFact->performAction();
     obstacles = gFact->performObstacle();
     player = gFact->newPlayer();
     title = gFact->setTitle();
-    /**
-     * gFact points to a concrete Factory-object which needs to perform the operations.
-     *
-     * makeObstacles:
-     * Fill 'obstacles' with pointers to the game's Obstacle-objects!
-     *
-     * makeActions:
-     * Fill 'actions' with pointers to the Action-objects the player may choose from
-     *
-     * makePlayer:
-     * Assign 'player' a pointer to a concrete Player-object
-     *
-     * Give 'title' a suitable name
-     */
+
 }
 
 Game::~Game() {
@@ -77,6 +68,8 @@ void Game::play() {
 }
 
 
+/**
+ * Added a way to destroy all the leftover raw pointers. **/
 template<typename T>
 void destroyVectorElements(vector<T> &vec) {
     for (int i=0; i<vec.size(); i++){

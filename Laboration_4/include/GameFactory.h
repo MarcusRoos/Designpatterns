@@ -17,21 +17,62 @@ class Player;
 class Obstacle;
 class Action;
 
+/**
+ Class GameFactory
+
+Pure virtual class, functions will be implemented in nasty and nice game
+ */
 
 class GameFactory {
  protected:
+    /**
+* Default constructor of class GameFactory
+*
+* @param None
+* @return None.
+*/
     GameFactory() = default;
 
  public:
+    /**
+* Default destructor of class GameFactory
+*
+* @param None
+* @return None.
+*/
     virtual ~GameFactory() = default;
+    /**
+* Virtual function of performAction
+*
+* @param None
+* @return Raw pointer of type Action.
+*/
     virtual vector <Action *> performAction() = 0;
+    /**
+* Virtual function of performObstacle
+*
+* @param None
+* @return Raw pointer of type Obstacle.
+*/
     virtual vector <Obstacle *> performObstacle() = 0;
+    /**
+* Virtual function of newPlayer
+*
+* @param None
+* @return Raw pointer of type Player.
+*/
     virtual Player* newPlayer() = 0;
+    /**
+* Virtual function of setTitle
+*
+* @param None
+* @return String.
+*/
     virtual string setTitle() = 0;
 };
 
 
-
+// All functions above are implemented in the classes below
      class NastyGameFactory : public GameFactory{
      public:
          NastyGameFactory()= default;
@@ -51,35 +92,3 @@ class GameFactory {
          Player * newPlayer() override;
          string setTitle() override;
      };
-/**
-*
-* Suitable operations
-* (implementations of GameFactory.cpp)
-*
-* Obstacles:
-* Dragon, Bomb, Samuray, SumoWrestler, Gangster
-*
-* Possible Actions:
-* BowAndShakeHandsAction, RunAndHideAction, SwordAction, RifleAction,
-* OfferFoodAction, ChainsawAction, CastAspellAction, BargainAndBuyAction, SurrenderAction
-*
-* Player:
-* HeroPlayer
-*/
-
-/**
-     * NiceGameFactory:
-     *
-     * Suitable operations
-     * (implementations of GameFactory.cpp)
-     *
-     * Obstacles:
-     * Wizard, Wall, Elephant, DPexam
-     *
-     * Possible Actions:
-     * BowAndShakeHandsAction, RunAndHideAction, BargainAndBuyAction,
-     * ChainsawAction, ClimbAction, CastAspellAction, SurrenderAction
-     *
-     * Player:
-     * OrdinaryPlayer
-     */

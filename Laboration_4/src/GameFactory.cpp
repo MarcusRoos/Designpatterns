@@ -8,6 +8,12 @@
 #include "Action.h"
 
 // Nasty Game
+/**
+ * Here we implement the actions for the nasty game mode,
+ * a vector is declared and then new actions are added to it,
+ * the actions added to it are the ones which are meant to be
+ * in a nasty game mode.
+ * **/
 vector<Action *> NastyGameFactory::performAction() {
     vector<Action *> action;
     action.emplace_back(new ChainsawAction());
@@ -24,6 +30,12 @@ vector<Action *> NastyGameFactory::performAction() {
     return action;
 }
 
+/**
+ * Here we implement the obstacles for the nasty game mode,
+ * a vector is declared and then new obstacles are added to it,
+ * the obstacles added to it are the ones which are meant to be
+ * in a nasty game mode.
+ * **/
 vector<Obstacle *> NastyGameFactory::performObstacle() {
     vector<Obstacle *> obstacle;
 
@@ -36,15 +48,27 @@ vector<Obstacle *> NastyGameFactory::performObstacle() {
     return obstacle;
 }
 
+/**
+ * Creates a new player for the nasty game mode, a hero player
+ * **/
 Player * NastyGameFactory::newPlayer() {
     return new HeroPlayer();
 }
 
+/**
+ * Sets the title of this game mode, which in this case is a Nasty Game
+ * **/
 string NastyGameFactory::setTitle() {
     return "Nasty Game";
 }
 
 // Nice Game
+/**
+ * Here we implement the actions for the nice game mode,
+ * a vector is declared and then new actions are added to it,
+ * the actions added to it are the ones which are meant to be
+ * in a nice game mode.
+ * **/
 vector<Action *> NiceGameFactory::performAction() {
     vector<Action *> action;
     action.emplace_back(new ChainsawAction());
@@ -58,6 +82,12 @@ vector<Action *> NiceGameFactory::performAction() {
     return action;
 }
 
+/**
+ * Here we implement the obstacles for the nice game mode,
+ * a vector is declared and then new obstacles are added to it,
+ * the obstacles added to it are the ones which are meant to be
+ * in a nice game mode.
+ * **/
 vector<Obstacle *> NiceGameFactory::performObstacle() {
     vector<Obstacle *> obstacle;
 
@@ -70,10 +100,16 @@ vector<Obstacle *> NiceGameFactory::performObstacle() {
     return obstacle;
 }
 
+/**
+ * Creates a new player for the nice game mode, an ordinary player
+ * **/
 Player * NiceGameFactory::newPlayer() {
     return new OrdinaryPlayer();
 }
 
+/**
+ * Sets the title of this game mode, which in this case is a Nice Game
+ * **/
 string NiceGameFactory::setTitle() {
     return "Nice Game";
 }
