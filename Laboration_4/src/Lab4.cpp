@@ -7,7 +7,7 @@
 #include <iostream>
 #include <vector>
 #include <cstdlib>
-#include "memstat.hpp"
+//#include "memstat.hpp"
 
 using std::cin;
 
@@ -28,16 +28,18 @@ void gameLoop() {
             }
 
             switch (choice) {
-                // case 1:  gf = Ett factory-objekt: break;
-                // case 2:  gf = Ett annat factory-objekt; break;
+                case 1: gf = new NiceGameFactory();
+                break;
+                case 2: gf = new NastyGameFactory();
+                break;
                 case 3: keepOn = false;
                 default: break;
             }
 
             if (keepOn) {
-                // Game game(gf);
-                // game.play();
-                // delete gf;
+                 Game game(gf);
+                 game.play();
+                 delete gf;
             }
         }  // while
 }

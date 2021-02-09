@@ -24,27 +24,48 @@ class GameFactory {
 
  public:
     virtual ~GameFactory() = default;
-    virtual vector <std::unique_ptr<Action>> performAction() = 0;
-    virtual vector <std::unique_ptr<Obstacle>> performObstacle() = 0;
+    virtual vector <Action *> performAction() = 0;
+    virtual vector <Obstacle *> performObstacle() = 0;
+    virtual Player* newPlayer() = 0;
+    virtual string setTitle() = 0;
 };
 
 
+
+     class NastyGameFactory : public GameFactory{
+     public:
+         NastyGameFactory()= default;
+         ~NastyGameFactory() override = default;
+         vector <Action *> performAction() override;
+         vector <Obstacle *> performObstacle() override;
+         Player * newPlayer() override;
+         string setTitle() override;
+     };
+
+     class NiceGameFactory : public GameFactory{
+     public:
+         NiceGameFactory() = default;
+         ~NiceGameFactory() override = default;
+         vector <Action *> performAction() override;
+         vector <Obstacle *> performObstacle() override;
+         Player * newPlayer() override;
+         string setTitle() override;
+     };
 /**
-     * NastyGameFactory:
-     *
-     * Suitable operations
-     * (implementations of GameFactory.cpp)
-     *
-     * Obstacles:
-     * Dragon, Bomb, Samuray, SumoWrestler, Gangster
-     *
-     * Possible Actions:
-     * BowAndShakeHandsAction, RunAndHideAction, SwordAction, RifleAction,
-     * OfferFoodAction, ChainsawAction, CastAspellAction, BargainAndBuyAction, SurrenderAction
-     *
-     * Player:
-     * HeroPlayer
-     */
+*
+* Suitable operations
+* (implementations of GameFactory.cpp)
+*
+* Obstacles:
+* Dragon, Bomb, Samuray, SumoWrestler, Gangster
+*
+* Possible Actions:
+* BowAndShakeHandsAction, RunAndHideAction, SwordAction, RifleAction,
+* OfferFoodAction, ChainsawAction, CastAspellAction, BargainAndBuyAction, SurrenderAction
+*
+* Player:
+* HeroPlayer
+*/
 
 /**
      * NiceGameFactory:

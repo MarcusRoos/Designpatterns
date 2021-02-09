@@ -13,6 +13,10 @@ void destroyVectorElements(vector<T> &vec);
 
 
 Game::Game(GameFactory *gFact) {
+    actions = gFact->performAction();
+    obstacles = gFact->performObstacle();
+    player = gFact->newPlayer();
+    title = gFact->setTitle();
     /**
      * gFact points to a concrete Factory-object which needs to perform the operations.
      *
