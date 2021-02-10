@@ -49,13 +49,15 @@ BakingRecepy* BakingRecepyManager::getNextBakingRecipe() {
     if(!hasAnotherRecepy()) {
         throw noBakingException;
     }
-    else {
-        BakingRecepy *recipe = bakingRecipes[bakingRecipes.size()-1];
-        bakingRecipes.pop_back();
-        return recipe;
+    BakingRecepy *recipe = bakingRecipes[bakingRecipes.size()-1];
+    bakingRecipes.pop_back();
+    if (recipe->isBakeable(getIngredient())) {
+        std::cout << "Vi kan baka " << recipe->getName() << std::endl;
+            return recipe;
     }
-
+    return recipe;
 }
+
 
 // Returns whether bakingRecipes vector is empty or not
 bool BakingRecepyManager::hasAnotherRecepy() {

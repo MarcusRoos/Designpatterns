@@ -29,10 +29,9 @@ void Bakery::runBakery() {
     {
         BakingRecepy* recipes;
         recipes = bakingRecepyManager.getNextBakingRecipe();
+
         while (recipes)   {
-            if (recipes->isBakeable(bakingRecepyManager.getIngredient())) {
-                recipes->bakeIt();
-            }
+            recipes->bakeIt();
             delete recipes;
             recipes = bakingRecepyManager.getNextBakingRecipe();
         }
