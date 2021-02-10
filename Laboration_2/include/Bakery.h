@@ -17,7 +17,7 @@ private:
     BakingRecepyManager bakingRecepyManager;
 public:
     Bakery();
-    void addRecepy(BakingRecepy *recipe) {bakingRecepyManager.addNewRecipe(recipe);}
+    void addRecepy(BakingRecepy *recipe);
     void runBakery();
 };
 

@@ -21,7 +21,6 @@ protected:
     std::vector<Ingredient> neededIng;
     explicit BakingRecepy(std::string aName);
 public:
-    BakingRecepy() = default;
     virtual ~BakingRecepy() = default;
     std::string getName(){return name;}
     bool isBakeable(std::vector<Ingredient> const& availableIng);

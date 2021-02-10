@@ -43,7 +43,6 @@ class Kladdkaka : public BakingRecepy
 {
 public:
     Kladdkaka();
-
     ~Kladdkaka() override = default;
     void bakeIt() override;
 };

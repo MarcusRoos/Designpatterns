@@ -18,16 +18,16 @@ Bakery::Bakery(){
     const std::string fileName = "pantry.dat";
     bakingRecepyManager = BakingRecepyManager(fileName);
     // Adds the 4 recommended recipes
-    addRecepy(new Pizza);
-    addRecepy(new Scones);
-    addRecepy(new Kladdkaka);
-    addRecepy(new Sockerkaka);
+    addRecepy(new Pizza());
+    addRecepy(new Scones());
+    addRecepy(new Kladdkaka());
+    addRecepy(new Sockerkaka());
 }
 
 void Bakery::runBakery() {
     try
     {
-        BakingRecepy *recipes;
+        BakingRecepy* recipes;
         recipes = bakingRecepyManager.getNextBakingRecipe();
         while (recipes)   {
             if (recipes->isBakeable(bakingRecepyManager.getIngredient())) {
@@ -40,5 +40,9 @@ void Bakery::runBakery() {
     catch (const NoBakingException &ex) {
         std::cout << ex.what() << std::endl;
     }
+}
+
+void Bakery::addRecepy(BakingRecepy *recipe) {
+    bakingRecepyManager.addNewRecipe(recipe);
 }
 

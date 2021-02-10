@@ -6,7 +6,7 @@
 
 #include "Recipes.h"
 
-Pizza::Pizza() {
+Pizza::Pizza() : BakingRecepy("Pizza") {
         neededIng.emplace_back("oil");
         neededIng.emplace_back("yeast");
         neededIng.emplace_back("wheat-flour");
@@ -14,16 +14,18 @@ Pizza::Pizza() {
 }
 
 void Pizza::bakeIt() {
-        std::cout << "Baking Pizza: ";
+    std::cout << "Baking: " << getName() << std::endl << "Which require "
+                                                         "the ingredients: ";
         for (const auto& ingExists : neededIng){
             std::cout << ingExists.getName() << ", ";
         }
+
         std::cout << std::endl << "Mash ingredients together, put topping on "
                                   "dough, keep in oven at "
                                   "225C for 10min." << std::endl << std::endl;
 }
 
-Scones::Scones() {
+Scones::Scones() : BakingRecepy("Scones") {
     neededIng.emplace_back("oil");
     neededIng.emplace_back("baking-powder");
     neededIng.emplace_back("wheat-flour");
@@ -33,7 +35,8 @@ Scones::Scones() {
 }
 
 void Scones::bakeIt() {
-    std::cout << "Baking Scones: ";
+    std::cout << "Baking: " << getName() << std::endl << "Which require "
+                                                         "the ingredients: ";
     for (const auto& ingExists : neededIng){
         std::cout << ingExists.getName() << ", ";
     }
@@ -42,7 +45,7 @@ void Scones::bakeIt() {
               << std::endl << std::endl;
 }
 
-Sockerkaka::Sockerkaka() {
+Sockerkaka::Sockerkaka() : BakingRecepy("Sockerkaka") {
     neededIng.emplace_back("egg");
     neededIng.emplace_back("sugar");
     neededIng.emplace_back("baking-powder");
@@ -52,7 +55,8 @@ Sockerkaka::Sockerkaka() {
 }
 
 void Sockerkaka::bakeIt() {
-    std::cout << "Baking Sockerkaka: ";
+    std::cout << "Baking: " << getName() << std::endl << "Which require "
+                                                         "the ingredients: ";
     for (const auto& ingExists : neededIng){
         std::cout << ingExists.getName() << ", ";
     }
@@ -61,7 +65,7 @@ void Sockerkaka::bakeIt() {
               << std::endl;
 }
 
-Kladdkaka::Kladdkaka() {
+Kladdkaka::Kladdkaka() : BakingRecepy("Kladdkaka") {
     neededIng.emplace_back("egg");
     neededIng.emplace_back("sugar");
     neededIng.emplace_back("baking-powder");
@@ -72,7 +76,8 @@ Kladdkaka::Kladdkaka() {
 }
 
 void Kladdkaka::bakeIt() {
-    std::cout << "Baking Kladdkaka: ";
+    std::cout << "Baking: " << getName() << std::endl << "Which require "
+                                                         "the ingredients: ";
     for (const auto& ingExists : neededIng){
         std::cout << ingExists.getName() << ", ";
     }
