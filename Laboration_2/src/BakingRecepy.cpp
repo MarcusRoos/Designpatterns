@@ -14,6 +14,9 @@ bool BakingRecepy::isBakeable(std::vector<Ingredient> const &availableIng) {
     {
         if (std::find(availableIng.begin(), availableIng.end(),
                       ingExists) == availableIng.end()){
+            std::cout << "Couldn't bake " <<
+            getName() << " because we are missing "
+            << ingExists.getName() << std::endl << std::endl;
             return false;
         }
     }
