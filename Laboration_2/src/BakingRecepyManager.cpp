@@ -46,13 +46,13 @@ BakingRecepyManager::~BakingRecepyManager() {
  false, in which case there are no more recipes. */
 BakingRecepy* BakingRecepyManager::getNextBakingRecipe() {
     NoBakingException noBakingException;
-    if(hasAnotherRecepy()) {
+    if(!hasAnotherRecepy()) {
+        throw noBakingException;
+    }
+    else {
         BakingRecepy *recipe = bakingRecipes[bakingRecipes.size()-1];
         bakingRecipes.pop_back();
         return recipe;
-    }
-    else {
-        throw noBakingException; // NOLINT(misc-throw-by-value-catch-by-reference)
     }
 
 }
