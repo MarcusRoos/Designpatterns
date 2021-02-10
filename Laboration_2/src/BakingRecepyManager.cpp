@@ -55,6 +55,7 @@ BakingRecepy* BakingRecepyManager::getNextBakingRecipe() {
         std::cout << "Vi kan baka " << recipe->getName() << std::endl;
     }
     if (!recipe->isBakeable(getIngredient())) {
+        delete recipe;
         bakingRecipes.pop_back();
         recipe = bakingRecipes[bakingRecipes.size()];
     }
