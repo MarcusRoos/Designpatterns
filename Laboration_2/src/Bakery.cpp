@@ -31,6 +31,7 @@ void Bakery::runBakery() {
         recipes = bakingRecepyManager.getNextBakingRecipe();
 
         while (recipes)   {
+            std::cout << "name: " << recipes->getName() << std::endl;
             recipes->bakeIt();
             delete recipes;
             recipes = bakingRecepyManager.getNextBakingRecipe();

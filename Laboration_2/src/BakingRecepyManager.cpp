@@ -53,7 +53,10 @@ BakingRecepy* BakingRecepyManager::getNextBakingRecipe() {
     bakingRecipes.pop_back();
     if (recipe->isBakeable(getIngredient())) {
         std::cout << "Vi kan baka " << recipe->getName() << std::endl;
-            return recipe;
+    }
+    if (!recipe->isBakeable(getIngredient())) {
+        bakingRecipes.pop_back();
+        recipe = bakingRecipes[bakingRecipes.size()];
     }
     return recipe;
 }
