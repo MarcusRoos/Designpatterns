@@ -21,7 +21,7 @@ bool CommandShow::execute(){
             cout << "Couldn't find Hanoi.log";
         }
         else {
-            logfile << "show\n";
+            logfile << "show \n";
             logfile.close();
         }
     }
