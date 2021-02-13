@@ -14,7 +14,7 @@
 
 
 
-class CommandMove : public Command
+class MoveCommand : public Command
 {
 private:
     HanoiEngine &engine;
@@ -22,9 +22,9 @@ private:
     bool log = true;
 
 public:
-    CommandMove(HanoiEngine &engine, int aFrom, int aTo);
-    CommandMove(HanoiEngine &engine, bool aLog);
-    ~CommandMove() override = default;
+    MoveCommand(HanoiEngine &engine, int aFrom, int aTo);
+    MoveCommand(HanoiEngine &engine, bool aLog);
+    ~MoveCommand() override = default;
     bool execute() override;
     bool unExecute() override;
     bool isUndoable() override;

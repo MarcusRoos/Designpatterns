@@ -6,11 +6,11 @@
 
 #include "ShowCommand.h"
 
-CommandShow::CommandShow(HanoiEngine &aEngine, bool aLog) : engine(aEngine) {
+ShowCommand::ShowCommand(HanoiEngine &aEngine, bool aLog) : engine(aEngine) {
     hanoiLog = aLog;
 }
 
-bool CommandShow::execute(){
+bool ShowCommand::execute(){
     engine.show();
     if (hanoiLog)
     {
@@ -27,13 +27,13 @@ bool CommandShow::execute(){
     }
     return false;
 }
-bool CommandShow::unExecute(){
+bool ShowCommand::unExecute(){
     return false;
 }
-bool CommandShow::isUndoable(){
+bool ShowCommand::isUndoable(){
     return true;
 }
-void CommandShow::readFromStream(std::ifstream &){
+void ShowCommand::readFromStream(std::ifstream &){
 
 }
 

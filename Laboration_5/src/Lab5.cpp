@@ -77,8 +77,8 @@ int main()
 
     HanoiEngine engine(3);
 
-    Cmdmanager->issueCommand(std::unique_ptr<CommandReset>
-            (new CommandReset(engine, reset())));
+    Cmdmanager->issueCommand(std::unique_ptr<ResetCommand>
+            (new ResetCommand(engine, reset())));
 
     bool gameLoop = true;
     while (gameLoop)
@@ -110,30 +110,30 @@ int main()
                 std::cin >> toTower;
                 std::cin.get();
                 Cmdmanager->issueCommand(
-                        std::unique_ptr<CommandMove> (
-                        new CommandMove(engine, fromTower, toTower)));
+                        std::unique_ptr<MoveCommand> (
+                        new MoveCommand(engine, fromTower, toTower)));
                 break;
             case 2:
                 Cmdmanager->issueCommand(
-                        std::unique_ptr<CommandShow> (
-                        new CommandShow(engine)));
+                        std::unique_ptr<ShowCommand> (
+                        new ShowCommand(engine)));
                 break;
             case 3:
                 Cmdmanager->undo();
                 Cmdmanager->issueCommand(
-                        std::unique_ptr<CommandShow> (
-                        new CommandShow(engine, false)));
+                        std::unique_ptr<ShowCommand> (
+                        new ShowCommand(engine, false)));
                 break;
             case 4:
                 Cmdmanager->redo();
                 Cmdmanager->issueCommand(
-                        std::unique_ptr<CommandShow> (
-                                new CommandShow(engine, false)));
+                        std::unique_ptr<ShowCommand> (
+                                new ShowCommand(engine, false)));
                 break;
             case 5:
                 Cmdmanager->issueCommand(
-                        std::unique_ptr<CommandReset> (
-                                new CommandReset(engine, reset())));
+                        std::unique_ptr<ResetCommand> (
+                                new ResetCommand(engine, reset())));
                 break;
             case 6:
                 default:

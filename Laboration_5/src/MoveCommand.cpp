@@ -6,12 +6,12 @@
 
 #include "MoveCommand.h"
 
-CommandMove::CommandMove(HanoiEngine &tmpEngine, int aFrom, int aTo) : engine(tmpEngine){
+MoveCommand::MoveCommand(HanoiEngine &tmpEngine, int aFrom, int aTo) : engine(tmpEngine){
     fromTower = aFrom;
     toTower = aTo;
 }
 
-bool CommandMove::execute() {
+bool MoveCommand::execute() {
 
     if (engine.move(fromTower, toTower)) {
         if (log) {
@@ -30,16 +30,16 @@ bool CommandMove::execute() {
     return false;
 }
 
-bool CommandMove::unExecute() {
-    engine.move(fromTower, toTower);
+bool MoveCommand::unExecute() {
+    engine.move(toTower, fromTower);
     return true;
 }
 
-bool CommandMove::isUndoable() {
+bool MoveCommand::isUndoable() {
     return true;
 }
 
-void CommandMove::readFromStream(std::ifstream &inFile) {
+void MoveCommand::readFromStream(std::ifstream &inFile) {
     std::string positions, movefrom, moveto;
     inFile >> positions;
     inFile.get();
@@ -54,6 +54,6 @@ void CommandMove::readFromStream(std::ifstream &inFile) {
 
 }
 
-CommandMove::CommandMove(HanoiEngine &tmpEngine, bool aLog) : engine(tmpEngine) {
+MoveCommand::MoveCommand(HanoiEngine &tmpEngine, bool aLog) : engine(tmpEngine) {
     log = aLog;
 }

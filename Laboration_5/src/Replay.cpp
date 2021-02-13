@@ -28,15 +28,15 @@ void Replay::readlog()
 void Replay::replayLastGame(const string& cmd, ifstream &inFile) {
     std::unique_ptr<Command> cmdPtr = nullptr;
     if (cmd == "move") {
-        cmdPtr = std::unique_ptr<CommandMove> (
-                new CommandMove(engine, false));
+        cmdPtr = std::unique_ptr<MoveCommand> (
+                new MoveCommand(engine, false));
         cmdPtr->readFromStream(inFile);
         cmdPtr->execute();
     }
 
     else if (cmd == "show") {
-        cmdPtr = std::unique_ptr<CommandShow> (
-                new CommandShow(engine, false));
+        cmdPtr = std::unique_ptr<ShowCommand> (
+                new ShowCommand(engine, false));
         cmdPtr->execute();
     }
 }

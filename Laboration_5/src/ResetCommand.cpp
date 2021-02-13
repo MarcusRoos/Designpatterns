@@ -6,20 +6,20 @@
 
 #include "ResetCommand.h"
 
-CommandReset::CommandReset(HanoiEngine &aEngine, int aDiscs) : engine(aEngine){
+ResetCommand::ResetCommand(HanoiEngine &aEngine, int aDiscs) : engine(aEngine){
     discs = aDiscs;
 }
 
-bool CommandReset::execute(){
+bool ResetCommand::execute(){
     engine.reset(discs);
     return false;
 }
-bool CommandReset::unExecute(){
+bool ResetCommand::unExecute(){
     return false;
 }
-bool CommandReset::isUndoable(){
+bool ResetCommand::isUndoable(){
     return true;
 }
-void CommandReset::readFromStream(std::ifstream &) {
+void ResetCommand::readFromStream(std::ifstream &) {
     // Need to implement empty function due to pure virtual
 }

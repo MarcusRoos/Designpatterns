@@ -12,15 +12,15 @@
 #include <fstream>
 
 
-class CommandShow : public Command
+class ShowCommand : public Command
 {
 
 private:
     HanoiEngine &engine;
     bool hanoiLog;
 public:
-    explicit CommandShow(HanoiEngine &aEngine, bool aLog=true);
-    ~CommandShow() override = default;
+    explicit ShowCommand(HanoiEngine &aEngine, bool aLog=true);
+    ~ShowCommand() override = default;
     bool execute() override;
     bool unExecute() override;
     bool isUndoable() override;

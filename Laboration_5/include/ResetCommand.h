@@ -12,15 +12,15 @@
 #include <fstream>
 
 
-class CommandReset : public Command
+class ResetCommand : public Command
 {
 
 private:
     HanoiEngine &engine;
     int discs;
 public:
-    CommandReset(HanoiEngine &aEngine, int aDiscs);
-    ~CommandReset() override = default;
+    ResetCommand(HanoiEngine &aEngine, int aDiscs);
+    ~ResetCommand() override = default;
     bool execute() override;
     bool unExecute() override;
     bool isUndoable() override;
