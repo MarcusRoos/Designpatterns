@@ -11,7 +11,13 @@
 #include "Command.h"
 #include <fstream>
 
-
+/**
+* The Show Command class
+* Implements the functions from Command.h as well as its own constructors,
+ * to its help it keeps track of the amount of discs to reset the engine to.
+ * It has a bool log which is used when
+ * we're reading from an already existing file.
+*/
 class ShowCommand : public Command
 {
 

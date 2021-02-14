@@ -21,5 +21,5 @@ bool ResetCommand::isUndoable(){
     return true;
 }
 void ResetCommand::readFromStream(std::ifstream &) {
-    // Need to implement empty function due to pure virtual
+
 }

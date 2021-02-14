@@ -10,7 +10,14 @@
 #include "Command.h"
 #include <memory>
 #include <list>
-
+/**
+* Class Command Manager
+ * This handles the commands sent back and forth the program, and keeps
+ * track of which commands got used when, it stores everything in a
+ * list and will always take the first command first, before proceeding
+ * to the next one, this is especially critical when we're keeping track
+ * of undo and redo.
+*/
 class CommandManager{
 private:
     typedef std::list <std::unique_ptr<Command>> CommandList;

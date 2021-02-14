@@ -11,7 +11,11 @@
 #include "Command.h"
 #include <fstream>
 
-
+/**
+* The Reset Command class
+* Implements the functions from Command.h as well as its own constructors,
+ * to its help it keeps track of the amount of discs to reset the engine to.
+*/
 class ResetCommand : public Command
 {
 

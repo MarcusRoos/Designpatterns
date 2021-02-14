@@ -6,6 +6,10 @@
 
 #include "Replay.h"
 
+/**
+ * Function readLog, reads the log once open and loads the strings within
+ * the log into the command string, which is then sent to replay last game.
+ * **/
 void Replay::readlog()
 {
     string cmd;
@@ -25,6 +29,12 @@ void Replay::readlog()
         std::cout << "Unable to open file";
 }
 
+/**
+ * Function replayLastGame, will replay the previous game loaded in Hanoi.log,
+ * this checks whether the command is either "move" or "show" to be able to
+ * accurate gauge the previous games. Will replay the entire game from start
+ * to finish.
+ * **/
 void Replay::replayLastGame(const string& cmd, ifstream &inFile) {
     std::unique_ptr<Command> cmdPtr = nullptr;
     if (cmd == "move") {

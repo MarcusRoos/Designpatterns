@@ -7,7 +7,11 @@
 #ifndef DT063G_COMMAND_H
 #define DT063G_COMMAND_H
 #include <fstream>
-
+/**
+* Virtual class Command
+* All functions are pure virtual and each specific command will implement
+ * their own solution.
+*/
 class Command {
 public:
     virtual bool execute()=0; // Execute the command

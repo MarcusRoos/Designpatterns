@@ -13,6 +13,15 @@
 #include <iostream>
 #include <string>
 
+/**
+ * The main program, consists of a main function, and a reset function.
+ * This reset function will delete the Hanoi.log on the harddrive and
+ * ask the user to load the towers with more discs. Once the user input a number
+ * a new file will be created, and an output stream will log into the Hanoi.log
+ * the amount of discs the towers were loaded with and returning the amount
+ * of discs to the calling function.
+ * **/
+
 int reset()
 {
     remove("Hanoi.log");
@@ -31,6 +40,19 @@ int reset()
     return discs;
 }
 
+/**
+ * The main fuction, this takes care of all the switches, all the menus and
+ * the input/output. Once started it will check whether a Hanoi.log exists,
+ * if it doesn't it will inform the user and the user will be asked to
+ * input how many discs should be added to the towers. If a log do exist, the
+ * user will be asked if they want to replay the previous game or start a
+ * new one. If they choose to see the replay every single move will be printed
+ * on the screen for the user to see, and they will then be asked to
+ * start a new game to continue playing.
+ * To calls directly to the hanoiEngine is done through this function, instead,
+ * it's all handle in a switch and once something needs to be called from
+ * hanoi engine it will go through the command manager class instead.
+ * **/
 
 int main()
 {
