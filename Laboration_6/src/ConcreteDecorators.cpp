@@ -7,7 +7,7 @@
 #include "ConcreteDecorators.h"
 
 ConcreteDecorators::ConcreteDecorators(
-        std::unique_ptr<MainComponent> component) :
+        std::shared_ptr<MainComponent> component) :
         nextComponent(std::move(component)) {
 }
 
@@ -19,44 +19,44 @@ double ConcreteDecorators::getPrice() {
     return nextComponent->getPrice();
 }
 
-Sugar::Sugar(std::unique_ptr<MainComponent> component) :
-ConcreteDecorators(std::move(component)) {}
+Sugar::Sugar(const std::shared_ptr<MainComponent>& component) :
+ConcreteDecorators(component) {}
 
 std::string Sugar::getName() {
-    return ConcreteDecorators::getName() + "Sugar";
+    return ConcreteDecorators::getName() + " + Sugar";
 }
 
 double Sugar::getPrice() {
     return ConcreteDecorators::getPrice() + 1;
 }
 
-Milk::Milk(std::unique_ptr<MainComponent> component) :
-        ConcreteDecorators(std::move(component)) {}
+Milk::Milk(const std::shared_ptr<MainComponent>& component) :
+        ConcreteDecorators(component) {}
 
 std::string Milk::getName() {
-    return ConcreteDecorators::getName() + "Milk";
+    return ConcreteDecorators::getName() + " + Milk";
 }
 
 double Milk::getPrice() {
     return ConcreteDecorators::getPrice() + 1;
 }
 
-Cream::Cream(std::unique_ptr<MainComponent> component) :
-        ConcreteDecorators(std::move(component)) {}
+Cream::Cream(const std::shared_ptr<MainComponent>& component) :
+        ConcreteDecorators(component) {}
 
 std::string Cream::getName() {
-    return ConcreteDecorators::getName() + "Cream";
+    return ConcreteDecorators::getName() + " + Cream";
 }
 
 double Cream::getPrice() {
     return ConcreteDecorators::getPrice() + 2;
 }
 
-WhippedCream::WhippedCream(std::unique_ptr<MainComponent> component) :
-        ConcreteDecorators(std::move(component)) {}
+WhippedCream::WhippedCream(const std::shared_ptr<MainComponent>& component) :
+        ConcreteDecorators(component) {}
 
 std::string WhippedCream::getName() {
-    return ConcreteDecorators::getName() + "WhippedCream";
+    return ConcreteDecorators::getName() + " + WhippedCream";
 }
 
 double WhippedCream::getPrice() {
