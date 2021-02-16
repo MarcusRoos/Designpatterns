@@ -8,7 +8,7 @@
 
 // Constructor, assigns vehicle type and
 // adds the different power sources to the vehicle as well as a default source
-Car::Car() : Vehicle("Car") {
+Car::Car(std::shared_ptr<PowerSource> pwrSrc) : Vehicle("Car", std::move(pwrSrc)) {
 
 }
 

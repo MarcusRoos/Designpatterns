@@ -18,7 +18,7 @@ class Car : public Vehicle
 {
 
 public:
-    Car();
+    Car(std::shared_ptr<PowerSource> pwrSrc);
     ~Car();
     void drive() override;
     static void steerLeft(int degrees);

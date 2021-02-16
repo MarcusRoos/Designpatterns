@@ -18,11 +18,11 @@
 class Vehicle
 {
 private:
-    std::unique_ptr<PowerSource> powerSource;
+    std::shared_ptr<PowerSource> powerSource;
     std::string vehicleType;
 protected:
     Vehicle() = default;
-    Vehicle(string avehicleType);
+    Vehicle(string avehicleType, std::shared_ptr<PowerSource> pwrSrc);
     bool tryStart();
     bool stop();
     bool incPower(int p = 5);

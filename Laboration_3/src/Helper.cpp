@@ -53,19 +53,21 @@ void mainProgram(){
         powerSource.emplace_back(new V8ClassicAD());
         powerSource.emplace_back(new GasTurbineAD());
         powerSource.emplace_back(new FuelCellAD());
-        vehicleType.emplace_back(new Car());
-        vehicleType.emplace_back(new Submarine());
-        vehicleType.emplace_back(new SpaceShuttle());
+
         int vehicleIdx=0;
         vehicleIdx = printVehicleMenu();
-        // Sets vehicle in accordance to user choice
-        std::unique_ptr<Vehicle> chosenVehicle(move(vehicleType[vehicleIdx - 1]));
 
-        // Sets power source
         int sourceIdx=0;
         sourceIdx = printEngineMenu();
+        std::shared_ptr<PowerSource> src = std::move(powerSource[sourceIdx-1]);
+        vehicleType.emplace_back(new Car(src));
+        vehicleType.emplace_back(new Submarine(src));
+        vehicleType.emplace_back(new SpaceShuttle(src));
+        // Sets vehicle in accordance to user choice
+        // Sets power source
         // Sets the power source in accordance to user choice
-        chosenVehicle->setPowerSource(move(powerSource[sourceIdx-1]));
+        std::unique_ptr<Vehicle> chosenVehicle(move(vehicleType[vehicleIdx - 1]));
+
         std::cout << "Vehicle: " + chosenVehicle->toString() << std::endl <<
                   "Power Source: " << chosenVehicle->poweredBy() << std::endl
                   << std::endl;

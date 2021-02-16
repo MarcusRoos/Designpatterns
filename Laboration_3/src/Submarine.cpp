@@ -8,7 +8,7 @@
 
 // Constructor, assigns vehicle type and
 // adds the different power sources to the vehicle as well as a default source
-Submarine::Submarine() : Vehicle("Submarine"){
+Submarine::Submarine(std::shared_ptr<PowerSource> pwrSrc) : Vehicle("Submarine", std::move(pwrSrc)){
 
 }
 

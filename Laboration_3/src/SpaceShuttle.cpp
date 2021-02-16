@@ -8,7 +8,7 @@
 
 // Constructor, assigns vehicle type and
 // adds the different power sources to the vehicle as well as a default source
-SpaceShuttle::SpaceShuttle() : Vehicle("Space Shuttle") {
+SpaceShuttle::SpaceShuttle(std::shared_ptr<PowerSource> pwrSrc) : Vehicle("SpaceShuttle", std::move(pwrSrc)) {
 
 }
 

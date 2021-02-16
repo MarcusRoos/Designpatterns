@@ -18,7 +18,7 @@ class Submarine : public Vehicle
 {
 
 public:
-    Submarine();
+    Submarine(std::shared_ptr<PowerSource> pwrSrc);
     ~Submarine();
     void drive() override;
     static void steerLeft(int degrees);

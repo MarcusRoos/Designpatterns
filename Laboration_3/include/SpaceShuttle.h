@@ -17,7 +17,7 @@ class SpaceShuttle : public Vehicle
 {
 
 public:
-    SpaceShuttle();
+    SpaceShuttle(std::shared_ptr<PowerSource> pwrSrc);
     ~SpaceShuttle();
     void drive() override;
     static void steerLeft(int degrees);
