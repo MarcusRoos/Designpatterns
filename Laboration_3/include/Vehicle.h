@@ -22,7 +22,7 @@ private:
     std::string vehicleType;
 protected:
     Vehicle() = default;
-    Vehicle(string avehicleType, std::unique_ptr<PowerSource> aPowerSource);
+    Vehicle(string avehicleType);
     bool tryStart();
     bool stop();
     bool incPower(int p = 5);

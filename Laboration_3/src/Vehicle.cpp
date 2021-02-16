@@ -8,9 +8,8 @@
 #include <utility>
 
 // Constructor, accepts string and unique pointer as parameters
-Vehicle::Vehicle(string avehicleType, std::unique_ptr <PowerSource> aPowerSource) {
+Vehicle::Vehicle(string avehicleType) {
     vehicleType = std::move(avehicleType);
-    powerSource = std::move(powerSource);
 }
 
 // Wanted steerLeft and steerRight to be pure virtual but to conform with requirements

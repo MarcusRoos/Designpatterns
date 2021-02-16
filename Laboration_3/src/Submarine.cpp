@@ -8,7 +8,7 @@
 
 // Constructor, assigns vehicle type and
 // adds the different power sources to the vehicle as well as a default source
-Submarine::Submarine() : Vehicle("Submarine", std::unique_ptr<PowerSource>(new GasTurbineAD())){
+Submarine::Submarine() : Vehicle("Submarine"){
 
 }
 
