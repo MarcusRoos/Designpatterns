@@ -6,8 +6,6 @@
 #include "memstat.hpp"
 #include "Helper.h"
 
-
-
 int main()
 {
     mainProgram();

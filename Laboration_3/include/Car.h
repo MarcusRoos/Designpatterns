@@ -15,7 +15,8 @@
 
 /** Car class, extends public interface Vehicle.
  * Will implement the virtual functions from the class Vehicle as well
- * as implement a driving scenario*/
+ * as implement a driving scenario
+ * */
 
 class Car : public Vehicle
 {
