@@ -18,9 +18,46 @@
 #include "Submarine.h"
 #include "SpaceShuttle.h"
 
+/** Helper header for the program, this will print all the menus
+ * and call the main program to remove verbosity from the main function
+ * */
 
+/**
+Prints the vehicle menu for the user to see and determine which vehicle
+ they'd like to use. Returns an integer once done, contains input
+ verification as well.
+
+@param None
+@return Integer
+*/
 int printVehicleMenu();
+
+/**
+Prints the engine menu for the user to see and determine which engine
+ they'd like to use for their vehicle. Returns an integer once done,
+ contains input verification as well.
+
+@param None
+@return Integer
+*/
 int printEngineMenu();
+
+/**
+Prints the retry menu for the user to decide whether they'd like to continue
+ the program or not. Returns an integer once done, contains input
+ verification as well.
+
+@param None
+@return Integer
+*/
+int printRetry();
+
+/**
+Calls the main program
+
+@param None
+@return None
+*/
 void mainProgram();
 
 

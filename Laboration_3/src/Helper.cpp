@@ -43,6 +43,21 @@ int printEngineMenu() {
     return sourceIdx;
 }
 
+int printRetry(){
+    std::cout << "Rego?" << std::endl;
+    std::cout << "1. Yes. " << std::endl;
+    std::cout << "0. Nah. " << std::endl;
+    int retry = 0;
+    std::cin >> retry;
+    while (std::cin.fail() || retry < 0 || retry > 1) {
+        std::cout << "Wrong input.\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin >> retry;
+    }
+    return retry;
+}
+
 void mainProgram(){
     bool again = true;
     do {
@@ -76,17 +91,8 @@ void mainProgram(){
         chosenVehicle->drive();
 
         // Asks if the user wants to continue the program or quit
-        std::cout << "Rego?" << std::endl;
-        std::cout << "1. Yes. " << std::endl;
-        std::cout << "0. Nah. " << std::endl;
         int retry = 0;
-        std::cin >> retry;
-        while (std::cin.fail() || retry < 0 || retry > 1) {
-            std::cout << "Wrong input.\n";
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cin >> retry;
-        }
+        retry = printRetry();
         switch(retry) {
             case 1:
                 break;
