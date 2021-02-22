@@ -24,7 +24,43 @@ int reset()
     return discs;
 }
 
-void printMainMenu(){
+int printMainMenu(){
+    std::cout << "Choose your next Hanoi move:" << std::endl;
+    std::cout << "1 - Move" << std::endl;
+    std::cout << "2 - Show" << std::endl;
+    std::cout << "3 - Undo" << std::endl;
+    std::cout << "4 - Redo" << std::endl;
+    std::cout << "5 - Reset" << std::endl;
+    std::cout << "6 - Quit" << std::endl;
+    std::cout << "Enter your choice: ";
+    int choice;
+    std::cin >> choice;
+    while (std::cin.fail() || choice < 0 || choice > 6) {
+        std::cout << "Wrong input.\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin >> choice;
+    }
+    return choice;
+}
+
+int printReplayMenu(){
+    std::cout << "=========== Hanoi game =========== " << endl;
+    std::cout << "1 - Replay previous game" << endl;
+    std::cout << "2 - New game" << endl;
+    std::cout << "Choice: ";
+    int choice = 0;
+    std::cin >> choice;
+    while (std::cin.fail() || choice < 0 || choice > 2) {
+        std::cout << "Wrong input.\n";
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cin >> choice;
+    }
+    return choice;
+}
+
+void printMainProgram(){
     int choice=0;
     std::unique_ptr<CommandManager> Cmdmanager (new CommandManager());
 
@@ -34,20 +70,9 @@ void printMainMenu(){
         std::cout << "No previous game saved" << std::endl;
     }
     else {
+        choice = printReplayMenu();
         std::string amountOfDiscs;
         logfile >> amountOfDiscs;
-        std::cout << "=========== Hanoi game =========== " << endl;
-        std::cout << "1 - Replay previous game" << endl;
-        std::cout << "2 - New game" << endl;
-        std::cout << "Choice: ";
-        std::cin >> choice;
-        while (std::cin.fail() || choice < 0 || choice > 2) {
-            std::cout << "Wrong input.\n";
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cin >> choice;
-        }
-
         switch (choice) {
             case 1: {
                 std::cout << "Number of discs: " << amountOfDiscs << std::endl;
@@ -74,22 +99,7 @@ void printMainMenu(){
     bool gameLoop = true;
     while (gameLoop)
     {
-        std::cout << "Choose your next Hanoi move:" << std::endl;
-        std::cout << "1 - Move" << std::endl;
-        std::cout << "2 - Show" << std::endl;
-        std::cout << "3 - Undo" << std::endl;
-        std::cout << "4 - Redo" << std::endl;
-        std::cout << "5 - Reset" << std::endl;
-        std::cout << "6 - Quit" << std::endl;
-        std::cout << "Enter your choice: ";
-        std::cin >> choice;
-        while (std::cin.fail() || choice < 0 || choice > 6) {
-            std::cout << "Wrong input.\n";
-            std::cin.clear();
-            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            std::cin >> choice;
-        }
-
+    choice = printMainMenu();
         switch (choice)
         {
             case 1:

@@ -19,7 +19,9 @@
 #include "Helper.h"
 #include <limits>
 
-void printMainMenu();
+void printMainProgram();
+int printMainMenu();
+int printReplayMenu();
 int reset();
 
 #endif //DT063G_HELPER_H

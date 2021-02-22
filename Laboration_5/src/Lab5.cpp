@@ -7,6 +7,6 @@
 
 int main()
 {
-    printMainMenu();
+    printMainProgram();
     return 0;
 }
