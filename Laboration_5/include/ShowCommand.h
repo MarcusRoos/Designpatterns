@@ -25,11 +25,47 @@ private:
     HanoiEngine &engine;
     bool hanoiLog;
 public:
+    /**
+Constructor, adds engine, and sets log to true
+
+@param HanoiEngine, bool
+@return None
+*/
     explicit ShowCommand(HanoiEngine &aEngine, bool aLog=true);
+    /**
+Destructor
+
+@param None
+@return None
+*/
     ~ShowCommand() override = default;
+    /**
+Implements the execute from Command
+
+@param None
+@return bool
+*/
     bool execute() override;
+    /**
+Implements the unExecute from Command
+
+@param None
+@return bool
+*/
     bool unExecute() override;
+    /**
+Implements the isUndoable from Command
+
+@param None
+@return bool (true)
+*/
     bool isUndoable() override;
+    /**
+Reads from instream
+
+@param ifstream
+@return void
+*/
     void readFromStream(std::ifstream &) override;
 };
 

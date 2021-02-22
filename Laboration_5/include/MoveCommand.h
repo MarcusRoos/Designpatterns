@@ -29,12 +29,55 @@ private:
     bool log = true;
 
 public:
+    /**
+MoveCommand constructor, adds the engine as well as from and to integers
+
+@param HanoiEngine, int, int
+@return None
+*/
     MoveCommand(HanoiEngine &engine, int aFrom, int aTo);
+    /**
+MoveCommand constructor, adds the engine, as well as a bool to check if the log
+     exists or not
+
+@param HanoiEngine, bool
+@return None
+*/
     MoveCommand(HanoiEngine &engine, bool aLog);
+    /**
+MoveCommand destructor
+
+@param None
+@return None
+*/
     ~MoveCommand() override = default;
+    /**
+Implements the execute function from Command.h to move a disc from a tower
+
+@param None
+@return bool
+*/
     bool execute() override;
+    /**
+Implements the unExecute function from Command.h to move a disc from a tower
+
+@param None
+@return bool
+*/
     bool unExecute() override;
+    /**
+Everything the move command does is undoable
+
+@param None
+@return bool (true, always)
+*/
     bool isUndoable() override;
+    /**
+Reads from the input stream
+
+@param ifstream
+@return None
+*/
     void readFromStream(std::ifstream &) override;
 };
 

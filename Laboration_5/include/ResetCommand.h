@@ -23,11 +23,47 @@ private:
     HanoiEngine &engine;
     int discs;
 public:
+    /**
+Constructor, adds engine, and amount of discs
+
+@param HanoiEngine, int
+@return None
+*/
     ResetCommand(HanoiEngine &aEngine, int aDiscs);
+    /**
+Default destructor
+
+@param None
+@return None
+*/
     ~ResetCommand() override = default;
+    /**
+Implements the execute function from Command by resetting the towers
+
+@param None
+@return bool
+*/
     bool execute() override;
+    /**
+This move cannot be unExecuted
+
+@param None
+@return None
+*/
     bool unExecute() override;
+    /**
+This move isn't unDoable
+
+@param None
+@return bool (false)
+*/
     bool isUndoable() override;
+    /**
+Reads from stream
+
+@param ifstream
+@return None
+*/
     void readFromStream(std::ifstream &) override;
 };
 

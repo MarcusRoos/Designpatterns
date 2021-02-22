@@ -18,7 +18,7 @@ bool ResetCommand::unExecute(){
     return false;
 }
 bool ResetCommand::isUndoable(){
-    return true;
+    return false;
 }
 void ResetCommand::readFromStream(std::ifstream &) {
 

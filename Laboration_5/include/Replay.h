@@ -25,9 +25,33 @@ class Replay
 private:
     HanoiEngine &engine;
 public:
+    /**
+Constructor, adds hanoiengine
+
+@param HanoiEngine
+@return None
+*/
     explicit Replay(HanoiEngine &tmpEngine) : engine(tmpEngine) {}
+    /**
+Default destructor
+
+@param None
+@return None
+*/
     ~Replay() = default;
+    /**
+Reads the replay log
+
+@param None
+@return None
+*/
     void readlog();
+    /**
+Replays the last game
+
+@param string, ifstream
+@return None
+*/
     void replayLastGame(const string& cmd, ifstream &tmpLog);
 };
 
