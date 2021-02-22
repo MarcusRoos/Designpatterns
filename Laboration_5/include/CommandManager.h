@@ -18,19 +18,22 @@
  * to the next one, this is especially critical when we're keeping track
  * of undo and redo.
 */
-class CommandManager{
+class CommandManager
+{
 private:
-    typedef std::list <std::unique_ptr<Command>> CommandList;
-    CommandList undoList;
-    CommandList redoList;
+    typedef std::list<std::unique_ptr<Command>> CommandList;
+    CommandList iUndoList;
+    CommandList iRedoList;
+    std::unique_ptr<Command> executeUndo();
+    std::unique_ptr<Command> executeRedo();
+    void addUndo(std::unique_ptr<Command> pCommand);
+    void addRedo(std::unique_ptr<Command> pCommand);
 public:
-    CommandManager() = default;
-    ~CommandManager() = default;
-    bool issueCommand(std::unique_ptr<Command> tmpCommand);
+    CommandManager();
+    ~CommandManager();
+    bool issueCommand(std::unique_ptr<Command> pCommand);
     bool undo();
     bool redo();
-    std::unique_ptr<Command>executeUndo();
-    std::unique_ptr<Command>executeRedo();
 };
 
 #endif //DT063G_COMMANDMANAGER_H
