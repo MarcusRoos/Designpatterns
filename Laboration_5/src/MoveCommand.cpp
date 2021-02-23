@@ -51,8 +51,21 @@ bool MoveCommand::execute() {
  * and fromTower
  * **/
 bool MoveCommand::unExecute() {
-    engine.move(toTower, fromTower);
+    if (engine.move(toTower, fromTower)){
+    if (log) {
+        std::ofstream logfile;
+        logfile.open("Hanoi.log", std::fstream::app);
+        if (logfile.is_open())
+        {
+            logfile << "move " << toTower << ":" << fromTower << "\n";
+            logfile.close();
+        }
+        else
+            cout << "Unable to open file";
+    }
     return true;
+}
+return false;
 }
 
 /**
