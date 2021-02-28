@@ -6,7 +6,4 @@
 #pragma once
 #include <string>
 
-std::string getAssignmentInfo() {
-    return "DT063G Laboration 7: Singleton";
-}
 
