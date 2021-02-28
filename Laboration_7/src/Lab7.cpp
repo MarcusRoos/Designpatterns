@@ -27,9 +27,11 @@ void gameLoop() {
 
         // Creates either nice, or nasty game factory object
         switch (choice) {
-            case 1: gf = new NiceGameFactory();
+            case 1:
+                gf = NiceGameFactory::getInstance();
                 break;
-            case 2: gf = new NastyGameFactory();
+            case 2:
+                gf = NastyGameFactory::getInstance();
                 break;
             case 3: keepOn = false;
             default: break;
@@ -39,6 +41,10 @@ void gameLoop() {
             Game game(gf);
             game.play();
             delete gf;
+        }
+        else{
+            NiceGameFactory::deAlloc();
+            NastyGameFactory::deAlloc();
         }
     }  // while
 }

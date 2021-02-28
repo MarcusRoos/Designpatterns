@@ -14,6 +14,7 @@
  * the actions added to it are the ones which are meant to be
  * in a nasty game mode.
  * **/
+NastyGameFactory *NastyGameFactory::instance = nullptr;
 vector<Action *> NastyGameFactory::performAction() {
     vector<Action *> action;
     action.emplace_back(new ChainsawAction());
@@ -62,6 +63,21 @@ string NastyGameFactory::setTitle() {
     return "Nasty Game";
 }
 
+NastyGameFactory* NastyGameFactory::getInstance() {
+    {
+        if (instance == nullptr)
+        {
+            instance = new NastyGameFactory();
+        }
+        return instance;
+    }
+}
+
+void NastyGameFactory::deAlloc() {
+    delete instance;
+    instance = nullptr;
+}
+
 // Nice Game
 /**
  * Here we implement the actions for the nice game mode,
@@ -69,6 +85,7 @@ string NastyGameFactory::setTitle() {
  * the actions added to it are the ones which are meant to be
  * in a nice game mode.
  * **/
+NiceGameFactory *NiceGameFactory::instance = nullptr;
 vector<Action *> NiceGameFactory::performAction() {
     vector<Action *> action;
     action.emplace_back(new ChainsawAction());
@@ -112,4 +129,19 @@ Player * NiceGameFactory::newPlayer() {
  * **/
 string NiceGameFactory::setTitle() {
     return "Nice Game";
+}
+
+NiceGameFactory* NiceGameFactory::getInstance() {
+    {
+        if (instance == nullptr)
+        {
+            instance = new NiceGameFactory();
+        }
+        return instance;
+    }
+}
+
+void NiceGameFactory::deAlloc() {
+    delete instance;
+    instance = nullptr;
 }

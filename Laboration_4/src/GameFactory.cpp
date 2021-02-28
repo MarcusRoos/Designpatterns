@@ -6,6 +6,8 @@
 #include "GameFactory.h"
 #include "Obstacle.h"
 #include "Action.h"
+#include "../../Laboration_7/include/GameFactory.h"
+
 
 // Nasty Game
 /**

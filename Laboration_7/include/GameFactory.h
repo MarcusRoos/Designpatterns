@@ -74,21 +74,29 @@ public:
 
 // All functions above are implemented in the classes below
 class NastyGameFactory : public GameFactory{
-public:
+private:
+    static NastyGameFactory* instance;
     NastyGameFactory()= default;
+public:
     ~NastyGameFactory() override = default;
     vector <Action *> performAction() override;
     vector <Obstacle *> performObstacle() override;
     Player * newPlayer() override;
     string setTitle() override;
+    static NastyGameFactory* getInstance();
+    static void deAlloc();
 };
 
 class NiceGameFactory : public GameFactory{
-public:
+private:
+    static NiceGameFactory* instance;
     NiceGameFactory() = default;
+public:
     ~NiceGameFactory() override = default;
     vector <Action *> performAction() override;
     vector <Obstacle *> performObstacle() override;
     Player * newPlayer() override;
     string setTitle() override;
+    static NiceGameFactory* getInstance();
+    static void deAlloc();
 };
