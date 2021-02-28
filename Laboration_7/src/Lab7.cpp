@@ -40,7 +40,6 @@ void gameLoop() {
         if (keepOn) {
             Game game(gf);
             game.play();
-            delete gf;
         }
         else{
             NiceGameFactory::deAlloc();
