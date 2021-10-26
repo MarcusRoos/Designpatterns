@@ -1,0 +1,218 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Laboration_1",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Laboration_1",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Laboration_2",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Laboration_2",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "Laboration_3",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Laboration_3",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "Laboration_4",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Laboration_4",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "Laboration_5",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Laboration_5",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "Laboration_6",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Laboration_6",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "Laboration_7",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.2"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Laboration_7",
+					"targetIndexes" : 
+					[
+						6
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					],
+					"name" : "DT063G",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "DT063G-Laboration_1::@6b0d85fb76c50eb4852c",
+					"jsonFile" : "target-DT063G-Laboration_1-Debug-43650d4bc6b2e4361ff1.json",
+					"name" : "DT063G-Laboration_1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "DT063G-Laboration_2::@7d1a585bbda9b440b0ad",
+					"jsonFile" : "target-DT063G-Laboration_2-Debug-4d3b14ee2fb0457c01e8.json",
+					"name" : "DT063G-Laboration_2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "DT063G-Laboration_3::@35c88582ac73fe9ffd5e",
+					"jsonFile" : "target-DT063G-Laboration_3-Debug-bcfca19dc292c4b7afc0.json",
+					"name" : "DT063G-Laboration_3",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "DT063G-Laboration_4::@183d57fa000cb3c3c9e6",
+					"jsonFile" : "target-DT063G-Laboration_4-Debug-05706e2950079c7d2f97.json",
+					"name" : "DT063G-Laboration_4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "DT063G-Laboration_5::@4b1db73ffb8939dde442",
+					"jsonFile" : "target-DT063G-Laboration_5-Debug-8bf60d51af6ba9a63c5b.json",
+					"name" : "DT063G-Laboration_5",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 6,
+					"id" : "DT063G-Laboration_6::@5781be809a4821c18f0f",
+					"jsonFile" : "target-DT063G-Laboration_6-Debug-7b750f0493904e6f782e.json",
+					"name" : "DT063G-Laboration_6",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "DT063G-Laboration_7::@b9a09c6a314389f8c284",
+					"jsonFile" : "target-DT063G-Laboration_7-Debug-98a66b990d0cbfc070e9.json",
+					"name" : "DT063G-Laboration_7",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Satan/Desktop/Skola/Universitet/Aktuella_kurser/DT063G/out/build/x64-Debug",
+		"source" : "C:/Users/Satan/Desktop/Skola/Universitet/Aktuella_kurser/DT063G"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}
